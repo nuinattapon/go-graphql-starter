@@ -1,15 +1,15 @@
 package main
 
 import (
-	gcontext "github.com/OscarYuen/go-graphql-starter/context"
-	h "github.com/OscarYuen/go-graphql-starter/handler"
-	"github.com/OscarYuen/go-graphql-starter/resolver"
-	"github.com/OscarYuen/go-graphql-starter/schema"
-	"github.com/OscarYuen/go-graphql-starter/service"
+	gcontext "github.com/nuinattapon/go-graphql-starter/context"
+	h "github.com/nuinattapon/go-graphql-starter/handler"
+	"github.com/nuinattapon/go-graphql-starter/resolver"
+	"github.com/nuinattapon/go-graphql-starter/schema"
+	"github.com/nuinattapon/go-graphql-starter/service"
 	"log"
 	"net/http"
 
-	"github.com/OscarYuen/go-graphql-starter/loader"
+	"github.com/nuinattapon/go-graphql-starter/loader"
 	graphql "github.com/graph-gophers/graphql-go"
 	"golang.org/x/net/context"
 )

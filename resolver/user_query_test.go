@@ -1,14 +1,15 @@
 package resolver
 
 import (
-	gcontext "github.com/OscarYuen/go-graphql-starter/context"
-	"github.com/OscarYuen/go-graphql-starter/schema"
-	"github.com/OscarYuen/go-graphql-starter/service"
-	"github.com/graph-gophers/graphql-go"
-	"github.com/graph-gophers/graphql-go/gqltesting"
-	"golang.org/x/net/context"
 	"log"
 	"testing"
+
+	"github.com/graph-gophers/graphql-go"
+	"github.com/graph-gophers/graphql-go/gqltesting"
+	gcontext "github.com/nuinattapon/go-graphql-starter/context"
+	"github.com/nuinattapon/go-graphql-starter/schema"
+	"github.com/nuinattapon/go-graphql-starter/service"
+	"golang.org/x/net/context"
 )
 
 var (
