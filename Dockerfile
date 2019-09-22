@@ -15,5 +15,11 @@ RUN go generate ./schema
 RUN go get -v ./
 RUN go build
 
+FROM alpine
+WORKDIR /app
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
+COPY --from=builder /go/src/github.com/nuinattapon/go-graphql-starter/go-graphql-starter /app
+COPY --from=builder /go/src/github.com/nuinattapon/go-graphql-starter/*.html /app
+COPY --from=builder /go/src/github.com/nuinattapon/go-graphql-starter/Config.toml /app
 EXPOSE 3000
-ENTRYPOINT ["./go-graphql-starter"]
+ENTRYPOINT ["/app/go-graphql-starter"]

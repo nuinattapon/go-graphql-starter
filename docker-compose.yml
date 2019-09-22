@@ -5,6 +5,7 @@ volumes:
 
 services:
   go-graphql-starter:
+    container_name: go-graphql
     image: gcr.io/nattapon/go-graphql
     build:
       context: .
@@ -18,6 +19,7 @@ services:
 
   postgres:
     image: postgres
+    container_name: postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123456
