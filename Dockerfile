@@ -1,6 +1,7 @@
 # Start from a Debian image with the latest version of Go installed
 # and a workspace (GOPATH) configured at /go.
-FROM golang:latest
+FROM golang:alpine AS builder
+RUN apk --update add ca-certificates && apk --update add git
 
 ENV SRC_DIR=/go/src/github.com/nuinattapon/go-graphql-starter/
 # Add the source code:
@@ -13,5 +14,6 @@ RUN export PATH=$PATH:$GOPATH/bin
 RUN go generate ./schema
 RUN go get -v ./
 RUN go build
-ENTRYPOINT ["./go-graphql-starter"]
+
 EXPOSE 3000
+ENTRYPOINT ["./go-graphql-starter"]

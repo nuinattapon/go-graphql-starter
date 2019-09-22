@@ -1,17 +1,20 @@
-version: '3'
+version: "3"
 
 volumes:
   psqldata:
 
 services:
   go-graphql-starter:
+    image: gcr.io/nattapon/go-graphql
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - 3000:3000
+    expose:
+      - 3000
     depends_on:
-      - "postgres"
+      - postgres
 
   postgres:
     image: postgres
@@ -25,5 +28,7 @@ services:
       - ./data/1.0/2_roles.sql:/docker-entrypoint-initdb.d/2_roles.sql
       - ./data/1.0/3_rel_users_roles.sql:/docker-entrypoint-initdb.d/3_rel_users_roles.sql
     ports:
-      - "5432:5432"
+      - 5432:5432
+    expose:
+      - 5432
     restart: unless-stopped
